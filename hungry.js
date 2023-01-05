@@ -9,6 +9,6 @@ function eatFood(){
 while (hungry != 0) {
   console.log('Your hungry: ' + hungry);
   console.log('Your food: ' + food);
-  comer();
+  eatFood();
 }
 console.log('You are no longer hungry!');
