@@ -3,13 +3,10 @@ function playDice(faces){
   switch(diceResult){
     case 1:
       return 'You rolled a d' + faces + ' and the result was ' + diceResult + ' -- Critical error!';
-      break;
     case faces:
       return 'You rolled a d' + faces + ' and the result was ' + diceResult + ' -- Critical success!';
-      break;
     default:
       return 'You rolled a d' + faces + ' and the result was ' + diceResult;
-      break;
   }
 }
 
