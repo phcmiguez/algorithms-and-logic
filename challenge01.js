@@ -1,6 +1,6 @@
 //Print the odd and even numbers from 1 to 10
 const sep = '--------------------------------------';
-let maxNum = 3;
+const maxNum = 10;
 
 //Only Odd
 for (minNum = 1; minNum <= maxNum; minNum++) {
