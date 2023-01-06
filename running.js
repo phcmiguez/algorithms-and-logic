@@ -1,4 +1,4 @@
-stamina = 10;
+let stamina = 10;
 
 function run() {
   console.log('Your stamina is ' + stamina);

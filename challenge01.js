@@ -1,29 +1,30 @@
 //Print the odd and even numbers from 1 to 10
-sep = '--------------------------------------';
+const sep = '--------------------------------------';
+let maxNum = 3;
 
 //Only Odd
-for (num=1;num<=10;num++){
-  if(num%2 != 0){
-    console.log(num + ' = Odd');
+for (minNum = 1; minNum <= maxNum; minNum++) {
+  if (minNum % 2 != 0) {
+    console.log(minNum + ' = Odd');
   }
 }
 
 console.log(sep);
 
 //Only Even
-for (num=1;num<=10;num++){
-  if(num%2 == 0){
-    console.log(num + ' = Even');
+for (minNum = 1; minNum <= maxNum; minNum++) {
+  if (minNum % 2 == 0) {
+    console.log(minNum + ' = Even');
   }
 }
 
 console.log(sep);
 
 //Both - Odd and Even
-for (num=1;num<=10;num++){
-  if(num%2 != 0){
-    console.log(num + ' = Odd');
-  }else{
-    console.log(num + ' = Even');
+for (minNum = 1; minNum <= maxNum; minNum++) {
+  if (minNum % 2 != 0) {
+    console.log(minNum + ' = Odd');
+  } else {
+    console.log(minNum + ' = Even');
   }
 }

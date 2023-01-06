@@ -1,5 +1,5 @@
 function playDice(faces){
-  diceResult = Math.ceil(Math.random() * faces);
+  const diceResult = Math.ceil(Math.random() * faces);
   switch(diceResult){
     case 1:
       return 'You rolled a d' + faces + ' and the result was ' + diceResult + ' -- Critical error!';

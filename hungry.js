@@ -1,5 +1,5 @@
-hungry = 10;
-food = 10;
+let hungry = 10;
+let food = 10;
 
 function eatFood(){
   hungry -= 1;
