@@ -6,19 +6,22 @@
 
  */
 
-function calcScore(scoreA, scoreB, scoreC) {
-  let finalScore = null;
-  if (scoreA > scoreB && scoreB > scoreC) {
-    //Score C is smallest
-    finalScore = (scoreA + scoreB) / 2;
-  } else if (scoreB > scoreC && scoreC > scoreA) {
-    //Score A is smallest
-    finalScore = (scoreC + scoreB) / 2;
-  } else {
-    //Score B is smallest
-    finalScore = (scoreC + scoreB) / 2;
-  }
+function minScore(score1, score2){
+  return score1 <= score2 ? score1 : score2;
+}
 
+function calcScore(scoreA, scoreB, scoreC) {
+  const minScore2 = minScore(scoreA, minScore(scoreB, scoreC));
+  let finalScore = null;
+
+  if(minScore2 === scoreA){
+    finalScore = (scoreB + scoreC) / 2;
+  }else if( minScore2 === scoreB){
+    finalScore = (scoreA + scoreC) / 2;
+  }else{
+    finalScore = (scoreA + scoreC) / 2;
+  }
+  
   if (finalScore >= 7) {
     return 'Approved! Your final score: ' + finalScore;
   } else if (finalScore < 7 && finalScore >= 4) {
@@ -28,4 +31,4 @@ function calcScore(scoreA, scoreB, scoreC) {
   }
 }
 
-console.log(calcScore(3.8, 9.8, 3.6));
+console.log(calcScore(7.8,3.1,6.7));
