@@ -24,11 +24,11 @@ function calcScore(scoreA, scoreB, scoreC) {
   
   if (finalScore >= 7) {
     return 'Approved! Your final score: ' + finalScore;
-  } else if (finalScore < 7 && finalScore >= 4) {
+  } else if (finalScore >= 4) {
     return 'Reavaliation. Your final score: ' + finalScore;
   } else if (finalScore < 4) {
     return 'Repproved. Your final score: ' + finalScore;
   }
 }
 
-console.log(calcScore(7.8,3.1,6.7));
+console.log(calcScore(1,1,2));
