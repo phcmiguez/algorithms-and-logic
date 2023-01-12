@@ -1,18 +1,5 @@
 //Constructor function
 
-// class Product {
-//   name = 'iPad';
-//   model = 'A28M1';
-//   year = 2023;
-//   turnOn = () => {
-//     return 'Online';
-//   }
-// };
-
-// const i = new Product;
-
-// console.log(i.turnOn());
-
 function ProductDate(year = 2023, month = 1, day = 1){
   this.year = year;
   this.month = month;
