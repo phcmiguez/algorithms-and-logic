@@ -1,14 +1,19 @@
 //Class
 
 class Product {
-  name = 'iPad';
-  model = 'A28M1';
-  year = 2023;
-  turnOn = function() {
-    return 'Online';
-  }
+
+  constructor(name = 'No name', model = 'No model', year = 2000){
+    this.name = name;
+    this.model = model;
+    this.year = year;
+  };
+
+  showProductDetails() {
+    return `---\nName: ${this.name}\nModel: ${this.model}\nYear: ${this.year}\n---`;
+  };
+
 };
 
-const i = new Product;
+const ipad = new Product('iPad', 'A18M23', 2023);
 
-console.log(i.turnOn());
+console.log(ipad.showProductDetails());
