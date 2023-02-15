@@ -1,25 +1,20 @@
-const products = [
-  {name: 'Laptop', price: 8900, fragile: true},
-  {name: 'iPad', price: 2200, fragile: true},
-  {name: 'Ball', price: 3, fragile: false},
-  {name: 'Machine Gun', price: 38900, fragile: false},
-]
+const { default: axios } = require("axios")
 
-const totalPrices = products
-                    .filter(element => element.price > 5000 && element.fragile)
-                    .map(element => element.price)
-                    .reduce((accumulator, currentValue) => accumulator + currentValue)
+const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json'
 
-Array.prototype.myFilter = function(callback) {
-  const newArr = []
-  for(let i = 0; i < this.length; i++){
-    if(callback(this[i], i, this)){
-      newArr.push(this[i])
-    }
-  }
-  return newArr
-}
+axios.get(url).then(response => {
+  const employee = response.data
+  const femaleEmployee = employee.filter((el) => el.genero === 'F')
+  const chineseWomanEmployee = femaleEmployee.filter((el) => el.pais === 'China')
 
-console.log(products.myFilter(el => el.fragile))
+  const lowestSalaryReduce = chineseWomanEmployee.reduce((el, cur) => el.salario > cur.salario ? cur : el)
 
-console.log(totalPrices)
+  const lowestSalary = chineseWomanEmployee.sort((a,b) => a.salario - b.salario)[0]
+  const highestSalary = chineseWomanEmployee.sort((a,b) => b.salario - a.salario)[0]
+
+  console.log('Lower salary:',lowestSalary.nome)
+  console.log('Highest salary:', highestSalary.nome)
+
+  console.log(lowestSalaryReduce.nome)
+  
+}).catch((e) => console.log(e.code))
